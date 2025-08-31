@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aluguéis Ativos — Sistema de Aluguel de Patins</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  
+<header>
+  <div class="top">
+    <div class="brand">🏒 Sistema de Aluguel de Patins</div>
+    <div class="topbar">
+      <div>Atendente: <strong id="usuarioLogado">—</strong></div>
+      <button class="btn ghost" data-logout>Sair</button>
+    </div>
+  </div>
+  <nav class="nav">
+    <a id="nav-aluguel" href="aluguel.html">Novo Aluguel</a>
+    <a id="nav-ativos" href="ativos.html">Aluguéis Ativos</a>
+    <a id="nav-devolucao" href="devolucao.html">Devolução</a>
+    <a id="nav-caixa" href="caixa.html">Fechamento de Caixa</a>
+  </nav>
+</header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Aluguéis Ativos</h2>
+      <div id="mensagemAtivos"></div>
+      <div class="estat" style="margin-bottom:14px">
+        <div class="stat-box"><div class="stat-title">Ativos</div><div class="stat-value" id="totalAtivos">0</div></div>
+        <div class="stat-box"><div class="stat-title">Patins Alugados</div><div class="stat-value" id="totalPatinsAlugados">0</div></div>
+        <div class="stat-box"><div class="stat-title">Receita Prevista</div><div class="stat-value" id="receitaPrevista">R$ 0,00</div></div>
+        <div class="stat-box"><div class="stat-title">Tempo Médio</div><div class="stat-value" id="tempoMedio">0h</div></div>
+      </div>
+      <div id="emptyState" class="tag">Sem aluguéis ativos no momento.</div>
+      <div id="alugueisAtivosGrid" class="ativos-grid"></div>
+    </section>
+  </main>
+  <script>document.addEventListener('DOMContentLoaded', ()=> initAtivosPage());</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novo Aluguel — Sistema de Aluguel de Patins</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  
+<header>
+  <div class="top">
+    <div class="brand">🏒 Sistema de Aluguel de Patins</div>
+    <div class="topbar">
+      <div>Atendente: <strong id="usuarioLogado">—</strong></div>
+      <button class="btn ghost" data-logout>Sair</button>
+    </div>
+  </div>
+  <nav class="nav">
+    <a id="nav-aluguel" href="aluguel.html">Novo Aluguel</a>
+    <a id="nav-ativos" href="ativos.html">Aluguéis Ativos</a>
+    <a id="nav-devolucao" href="devolucao.html">Devolução</a>
+    <a id="nav-caixa" href="caixa.html">Fechamento de Caixa</a>
+  </nav>
+</header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Novo Aluguel</h2>
+      <div id="mensagemAluguel"></div>
+      <div class="grid cols-2">
+        <div>
+          <label>CPF do Cliente</label>
+          <input id="cpfcliente" maxlength="14" placeholder="000.000.000-00">
+        </div>
+        <div>
+          <label>Número do Calçado</label>
+          <input id="numerocalcado" type="number" placeholder="Ex.: 39">
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button id="buscarPatins" class="btn">Buscar Patins</button>
+        <button id="limparAluguel" class="btn secondary">Limpar</button>
+      </div>
+      <div id="patinsDisponiveis" class="hidden" style="margin-top:16px">
+        <div class="section-title">Patins Disponíveis</div>
+        <div id="patinsGrid" class="grid cols-3"></div>
+      </div>
+      <div id="dadosAluguel" style="margin-top:16px"></div>
+      <div id="confirmarAluguel" class="hidden row" style="margin-top:12px">
+        <button id="btnConfirmarAluguel" class="btn success">Confirmar</button>
+        <button id="btnCancelarAluguel" class="btn danger">Cancelar</button>
+      </div>
+    </section>
+  </main>
+  <script>document.addEventListener('DOMContentLoaded', ()=> initAluguelPage());</script>
+</body>
+</html>

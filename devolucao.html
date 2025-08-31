@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devolução — Sistema de Aluguel de Patins</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  
+<header>
+  <div class="top">
+    <div class="brand">🏒 Sistema de Aluguel de Patins</div>
+    <div class="topbar">
+      <div>Atendente: <strong id="usuarioLogado">—</strong></div>
+      <button class="btn ghost" data-logout>Sair</button>
+    </div>
+  </div>
+  <nav class="nav">
+    <a id="nav-aluguel" href="aluguel.html">Novo Aluguel</a>
+    <a id="nav-ativos" href="ativos.html">Aluguéis Ativos</a>
+    <a id="nav-devolucao" href="devolucao.html">Devolução</a>
+    <a id="nav-caixa" href="caixa.html">Fechamento de Caixa</a>
+  </nav>
+</header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Devolução</h2>
+      <div id="mensagemDevolucao"></div>
+      <div class="grid cols-2">
+        <div>
+          <label>ID do Patins</label>
+          <input id="numeropatins" placeholder="Ex.: P003">
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button id="buscarAluguel" class="btn">Buscar Aluguel</button>
+        <button id="limparDevolucao" class="btn secondary">Limpar</button>
+      </div>
+      <div id="aluguelAtivo" class="hidden panel" style="margin-top:16px">
+        <div class="section-title">Dados do Aluguel</div>
+        <div id="dadosAluguelAtivo" class="grid cols-2"></div>
+        <div class="grid cols-2" style="margin-top:12px">
+          <div>
+            <label>Estado do Patins</label>
+            <select id="estadopatins">
+              <option value="bom">Bom</option>
+              <option value="danificado">Danificado (+ taxa)</option>
+            </select>
+          </div>
+          <div>
+            <label>Forma de Pagamento</label>
+            <select id="formapagamento">
+              <option value="dinheiro">Dinheiro</option>
+              <option value="cartao">Cartão</option>
+              <option value="pix">Pix</option>
+            </select>
+          </div>
+        </div>
+        <div id="valorTotal" class="panel" style="margin-top:12px"></div>
+        <div class="row" style="margin-top:12px">
+          <button id="btnEncerrar" class="btn success">Encerrar Aluguel</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>document.addEventListener('DOMContentLoaded', ()=> initDevolucaoPage());</script>
+</body>
+</html>

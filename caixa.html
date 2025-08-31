@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fechamento de Caixa — Sistema de Aluguel de Patins</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  
+<header>
+  <div class="top">
+    <div class="brand">🏒 Sistema de Aluguel de Patins</div>
+    <div class="topbar">
+      <div>Atendente: <strong id="usuarioLogado">—</strong></div>
+      <button class="btn ghost" data-logout>Sair</button>
+    </div>
+  </div>
+  <nav class="nav">
+    <a id="nav-aluguel" href="aluguel.html">Novo Aluguel</a>
+    <a id="nav-ativos" href="ativos.html">Aluguéis Ativos</a>
+    <a id="nav-devolucao" href="devolucao.html">Devolução</a>
+    <a id="nav-caixa" href="caixa.html">Fechamento de Caixa</a>
+  </nav>
+</header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Fechamento de Caixa</h2>
+      <div id="mensagemCaixa"></div>
+      <div class="grid cols-2">
+        <div class="panel">
+          <div class="section-title">Relatório</div>
+          <div><b>Data/Hora:</b> <span id="dataFechamento">—</span></div>
+          <div id="totaisPagamento" style="margin-top:10px"></div>
+          <div style="margin-top:10px"><b>Total:</b> <span id="totalConsolidado">R$ 0,00</span></div>
+        </div>
+        <div class="panel">
+          <div class="section-title">Ações</div>
+          <div class="row">
+            <button id="btnGerar" class="btn">Gerar Relatório</button>
+            <button id="btnConfirmar" class="btn success">Confirmar Fechamento</button>
+            <button id="btnSalvar" class="btn secondary">Salvar TXT</button>
+            <button id="btnEmail" class="btn ghost">Enviar por Email</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>document.addEventListener('DOMContentLoaded', ()=> initCaixaPage());</script>
+</body>
+</html>

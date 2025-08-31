@@ -1,0 +1,87 @@
+
+:root {
+  --bg: #0f1220;
+  --panel: #171a2b;
+  --panel-2: #1e2238;
+  --text: #e6e8f0;
+  --muted: #9aa0b4;
+  --primary: #5b8cff;
+  --success: #30c48d;
+  --danger: #ff6b6b;
+  --warning: #ffb020;
+  --border: #2a2f4a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: radial-gradient(1200px 600px at 20% -10%, #263053 0%, transparent 60%), var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--text);
+}
+a { color: var(--primary); text-decoration: none; }
+.hidden { display: none !important; }
+.container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+header {
+  background: linear-gradient(180deg, #14182a, #0f1220);
+  border-bottom: 1px solid var(--border);
+}
+header .top {
+  max-width: 1100px; margin: 0 auto; padding: 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { font-weight: 700; letter-spacing: .3px; }
+.nav {
+  display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--border);
+  max-width: 1100px; margin: 0 auto;
+}
+.nav a {
+  background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+  padding: 10px 14px; border-radius: 8px;
+}
+.nav a.active { outline: 2px solid var(--primary); }
+.panel {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px;
+}
+h1,h2 { margin: 0 0 14px; }
+.grid { display: grid; gap: 14px; }
+.grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; } }
+label { display:block; margin: 8px 0 6px; color: var(--muted); font-size: 14px; }
+input, select {
+  width: 100%; background: #0e1120; border: 1px solid var(--border); color: var(--text);
+  border-radius: 10px; padding: 10px 12px; outline: none;
+}
+input:focus, select:focus { border-color: var(--primary); }
+.btn {
+  background: var(--primary); color: white; border: 0; padding: 10px 14px; border-radius: 10px; cursor: pointer;
+}
+.btn.secondary { background: #293152; }
+.btn.ghost { background: transparent; border: 1px solid var(--border); }
+.btn.danger { background: var(--danger); }
+.btn.success { background: var(--success); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row .btn { flex: 1; min-width: 140px; }
+.alert { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); margin: 10px 0; }
+.alert-success { background: #10261f; border-color: #1a7657; }
+.alert-error { background: #2b1620; border-color: #8d2a4b; }
+.alert-info { background: #121d30; border-color: #29426e; }
+.section-title { font-weight: 700; margin: 8px 0 12px; color: #c7cbe0;}
+/* Cards de Aluguéis Ativos */
+.ativos-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1000px) { .ativos-grid { grid-template-columns: 1fr; } }
+.aluguel-ativo-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.aluguel-header { display:flex; justify-content: space-between; align-items:center; margin-bottom: 8px; }
+.aluguel-id { font-weight: 700; }
+.status-badge { background: rgba(48,196,141,.12); color: var(--success); padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(48,196,141,.4); font-size: 12px; }
+.aluguel-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
+.detail-item .detail-label { color: var(--muted); font-size: 12px; }
+.detail-item .detail-value { font-weight: 600; }
+.tempo-valor, .valor-atual-numero { font-size: 22px; font-weight: 800; }
+.estat { display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.stat-box { background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.stat-title { color: var(--muted); font-size: 12px; }
+.stat-value { font-weight: 800; font-size: 22px; }
+.tag { background: #0e1120; border: 1px dashed var(--border); color: var(--muted); padding: 12px; border-radius: 12px; text-align:center; }
+.topbar { display:flex; align-items:center; gap: 10px; }
+.patins-item {background:#0e1120;border:1px solid var(--border);border-radius:10px;padding:12px;cursor:pointer}
+.small { font-size: 12px; color: var(--muted); }
